@@ -1,0 +1,154 @@
+body{
+    background-color: #f6f6f6;
+}
+/*style for slider*/
+.container-slider{
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    margin-bottom:50px;
+    position:relative;
+}
+.slider-item{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    padding:10px;
+    margin-bottom:10px;
+    display:none;
+}
+.active{
+    display:inline-block;
+}
+.slider-item img{
+    width:100%;
+    height:100%;
+}
+.slider-arrows{
+    position:absolute;
+    width:100%;
+    height:40px;
+    top:70%;
+    display:none;
+}
+.slider-caption{
+    position:relative;
+    bottom:180px;
+    color:white;
+    text-align:center;
+    z-index:3;
+}
+.slider-caption h1{font-size:45px;font-weight:bold;}
+#btn-right, #btn-left{
+    position:relative;
+    bottom:150px;
+    font-size:28px;
+    cursor: pointer;
+    color:white;
+}
+#btn-right{
+    float:right;
+    right:20px;
+}
+#btn-left{
+    float:left;
+    left:20px;
+}
+section{height:auto;}
+/*end style for slider*/
+/*style for section what we do*/
+.what-we-do, .about-us{
+    width:90%;
+    margin:auto;
+    background-color: white;
+    text-align:center;
+    padding:10px;
+    margin-bottom:50px;
+}
+.what-we-do h1, .about-us h1{
+    color: #ff8379;
+    padding:10px;
+    border-bottom: 1px solid #cecece;
+    width:200px;
+    margin:auto;
+    margin-bottom:20px;
+}
+/*end style for section what we do*/
+
+/*style for about us section*/
+.about-us h1{
+    color:#ff8379;
+}
+/*end style for about us section*/
+
+/*start section of prices cards*/
+.section-prices-card{
+    width:100%;
+    background-color: #03A9F4;
+    margin-bottom:30px;
+    box-sizing: content-box;
+    padding: 10px 0px 10px 0px;
+}
+.prices-title{
+    text-align:center;
+    color:white;
+    border-bottom:1px solid #cecece;
+    padding:10px;
+    margin-bottom:10px;
+}
+.price-card-container{
+    height:auto;
+    background-color:white;
+    border:1px solid #cecece;
+    margin-bottom:20px;
+}
+.title-currency{
+    color:#03A9F4;
+    text-align:center;
+    border-bottom: 1px solid #cecece;
+    margin-bottom:10px;
+    padding:10px;
+}
+.price-card{text-align:center;
+    background-color:#ff8379;
+    background-color:#03A9F4;
+    width:150px;
+    border-radius:100%;
+    height:150px;
+    margin:auto;
+    color:white;
+    margin-top:30px;
+    padding:10px;
+}
+.currency{
+    line-height:120px;
+    height:80px;
+    font-weight:bold;
+    font-size:35px;
+}
+.price-card-description{
+    width:80%;
+    text-align:center;
+    margin:auto;
+    padding:5px;
+    margin-top:30px;
+    color: #717171;
+    margin-bottom:30px;
+}
+.start-now{
+    display:block;
+    padding:10px 20px 10px 20px;
+    background-color:#03A9F4;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    margin:auto;
+    width:150px;
+    text-align:center;
+    margin-bottom:30px;
+}
+.start-now:hover{
+    color:white;
+    text-decoration:none;
+}
+/*end start section of prices cards*/

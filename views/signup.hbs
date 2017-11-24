@@ -1,0 +1,32 @@
+<style>
+    @import url("/stylesheets/sign.css");
+</style>
+
+<div class="container">
+    <form class="form-sign" action="/signup" method="post">
+        <h3>{{title}}</h3>
+        {{#if error}}
+            <div class="alert">{{error}}</div>
+        {{/if}}
+        <div class="form-group">
+            <label>username</label>
+            <input class="form-control" type="text" name="username"/>
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input class="form-control" type="email" name="email"/>
+        </div>
+        <div class="form-group">
+            <label>password</label>
+            <input class="form-control" type="password" name="password"/>
+        </div>
+        <div class="form-group">
+            <label>confirm password</label>
+            <input class="form-control" type="password" name="confirmPassword"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control submit-btn" value="submit"/>
+        </div>
+    </form>
+</div>
+<script src="/javascripts/sign.js"></script>

@@ -1,0 +1,78 @@
+body {
+  padding:0px;
+  margin: 0px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height:auto;
+}
+/*style for heade and navbar*/
+header{
+  box-shadow: 7px -6px 20px 0px;
+}
+.static-header-before-login nav .navbar-nav a{
+  color:black;
+}
+.navbar-brand{font-size:22px;}
+.static-header-before-login nav .navbar-nav a:hover{
+  background:none;
+}
+.static-header-before-login nav .nav-links, #about-us-link{
+  color:white !important;
+  padding:12px 22px 12px 22px;
+  margin:10px;
+  border-radius:5px;
+  text-align:center;
+}
+.sign-up{
+  background-color: #3da6ff;
+}
+.sign-up:hover{
+  background-color: #2992ff !important;
+}
+.log-in{
+  background-color: #7e8013;
+}
+.log-in:hover{
+  background-color: #1a8045 !important;
+}
+#about-us-link{
+  background-color: rgba(6, 42, 27, 0.77);
+}
+#about-us-link:hover{
+  background-color: rgba(3, 21, 13, 0.77);
+}
+/*end style for heade and navbar*/
+/*start style for main container of pages*/
+.container{width:100%;height:auto;}
+/*end style for main container of pages*/
+
+/*style for footer*/
+footer{
+  height:auto;
+  background-color: rgba(3, 21, 13, 0.77);
+  padding:10px;
+  width:100%;
+  min-height:70px;
+  color:white;
+}
+footer .payments .fa-paypal{
+  color:white;
+
+}
+.payments-title{margin:0px;text-align:left;margin-bottom:30px;}
+.payments col-lg{text-align:left;}
+footer .voda-icon{
+  width:40px;
+  height:40px;
+  margin-right:10px;
+}
+.copy-rights{
+  text-align:right;
+}
+/*media query*/
+@media (max-width: 765px) {
+  .static-header-before-login nav .navbar-right li{
+    width:40%;
+  }
+}
+
+
