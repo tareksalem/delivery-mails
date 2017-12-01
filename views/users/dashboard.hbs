@@ -1,12 +1,25 @@
-<div class="container">
-    {{#if success}}
-        <div class="alert alert-success">{{success}}</div>
-    {{/if}}
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            {{#if userLogged}}
-                {{> usersidebar}}
-            {{/if}}
-        </div>
+<!--requiring the text editor script-->
+<script src="/javascripts/tinymce_4.7.2/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'#widgEditor' });</script>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {{#if sendMails}}
+            <form class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-email">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 float-none">
+                    <div class="form-group">
+                        <label>enter the title of email</label>
+                        <input class="form-control" name="emailTitle">
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 float-none">
+                    <div class="form-group">
+                        <label>enter the email body</label>
+                        <textarea id="widgEditor" class="form-control" name="emailBody"></textarea>
+                    </div>
+                </div>
+            </form>
+        {{/if}}
+        {{#if addEmail}}
+            <span></span>
+        {{/if}}
     </div>
-</div>
+

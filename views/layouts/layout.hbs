@@ -60,7 +60,9 @@
         {{> userheader}}
     {{/if}}
   <div class="container">
-
+        {{#if userLogged}}
+            <h2 class="welcom-user">Welcome {{user.username}}</h2>
+        {{/if}}
       {{{body}}}
   </div>
   <!--static footers-->

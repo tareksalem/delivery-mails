@@ -12,14 +12,20 @@ router.get("/logout", function (req, res, next) {
 });
 /* GET users listing. */
 router.get('/complete', function(req, res, next) {
-    res.render('complete', { title: 'complete', titleSite: "delivery mails.com", error: req.flash("error"), success: req.flash("success")});
+    res.render('complete', {title: 'complete', titleSite: "delivery mails.com", error: req.flash("error"), success: req.flash("success")});
 });
 //get user setting page
 router.get("/setting", function (req, res, netx) {
     res.render("./users/setting", {title: "my setting", titleSite: "delivery mails.com", user: req.user, error: req.flash("error"), success: req.flash("success")});
 });
 router.get("/dashboard", function (req, res, next) {
-    res.render("./users/dashboard", {title: "dashboard", titleSite: "delivery mails.com"});
+    res.redirect("/users/dashboard/sendmails");
+});
+router.get("/dashboard/addmail", function (req, res, next) {
+    res.render("./users/dashboard", {layout: "userLayout.hbs", addEmail: "add email", title: "dashboard", titleSite: "delivery mails.com"});
+});
+router.get("/dashboard/sendmails", function (req, res, next) {
+    res.render("./users/dashboard", {layout: "userLayout.hbs", sendMails: "send email", title: "dashboard", titleSite: "delivery mails.com"});
 });
 router.post("/useractivate", function (req, res, next) {
     req.flash("success", "good step, now the inforamtion has entered and we will activate your memebership in a few hours");

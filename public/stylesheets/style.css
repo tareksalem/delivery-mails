@@ -66,9 +66,13 @@ header{
 }
 /*end style for heade and navbar*/
 /*start style for main container of pages*/
-.container{width:100%;height:auto;}
+.container{width:100%;height:auto;margin-bottom:100px;}
 /*end style for main container of pages*/
-
+.welcom-user{
+  text-align:left;
+  color: #249dff;
+  margin-bottom:20px;
+}
 /*style for footer*/
 footer{
   height:auto;
@@ -95,8 +99,9 @@ footer .voda-icon{
 
 /*media query*/
 @media (max-width: 765px) {
-  .static-header-before-login nav .navbar-right li{
+  .static-header-before-login nav li{
     width:40%;
+    display:inline-block;
   }
 }
 

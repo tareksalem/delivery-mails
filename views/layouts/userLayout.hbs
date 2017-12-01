@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--jquery script-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        @import url("/stylesheets/dashboard.css");
+    </style>
+</head>
+<body>
+{{#if isNotLoggedIn}}
+    <!--static header befor login to the site-->
+    <header class="static-header-before-login">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">{{titleSite}}</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="/#aboutus" id="about-us-link">about us</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-links sign-up" href="/signup">sign up</a></li>
+                        <li><a class="nav-links log-in" href="/login">login</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!--end static header befor login to the site-->
+{{/if}}
+{{#if userLogged}}
+    {{> userheader}}
+{{/if}}
+<div class="container">
+    {{#if userLogged}}
+        <h2 class="welcom-user">Welcome {{user.username}}</h2>
+    {{/if}}
+    <div class="container">
+        {{#if success}}
+            <div class="alert alert-success">{{success}}</div>
+        {{/if}}
+        <div class="row">
+            <div class="user-side-bar col-lg-3 col-md-3 col-sm-8 col-xs-12">
+                {{#if userLogged}}
+                    {{> usersidebar}}
+                {{/if}}
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--static footers-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h3 class="payments-title">payments</h3>
+            </div>
+            <div class="payments col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <i class="fa fa-paypal fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                    <img class="voda-icon" src="/images/vodaphone.png"/>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h5 class="copy-rights">&copy; all rights are saved</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script src="/javascripts/dashboard.js"></script>

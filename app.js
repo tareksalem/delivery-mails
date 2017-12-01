@@ -43,6 +43,7 @@ app.use(function (req, res, next) {
   res.locals.message = require("express-messages")(req, res);
   if (req.isAuthenticated() && req.user.role == "user") {
       res.locals.userLogged = req.isAuthenticated();
+      res.locals.user = req.user;
   }
   res.locals.isNotLoggedIn = !req.isAuthenticated();
   next();
