@@ -10,12 +10,14 @@ var userSchema = new Schema({
     confirmPassword: {type: String, required: true},
     passwordResetToken: {type: String, default: ""},
     passwordResetExpires: {type: String, default: Date.now},
-    role: {type: String, required: true}
+    role: {type: String, required: true},
+    activateExpires: {type: String},
+    userPhone: {type: Number, required: true}
 });
 userSchema.methods.encryptPassword = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 };
 userSchema.methods.validPassword = function (password) {
-  return bcrypt.compareSyc(password, this.password);
+  return bcrypt.compareSync(password, this.password);
 };
 var Useer = module.exports = mongoose.model("users", userSchema, "users");

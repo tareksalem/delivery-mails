@@ -22,10 +22,6 @@ passport.use("local.signup", new LocalStrategy({
     passwordField: "password",
     passReqToCallback: true
 }, function (req, email, password, done) {
-        if (!req.body.username || !req.body.email || !req.body.password || !req.body.confirmpassword) {
-            req.flash("error", "you should enter all fileds");
-            res.redirect("/signup");
-        } else {
             User.findOne({"email": email}, function (err, user) {
                 if (err) {
                     console.log(err);
@@ -41,6 +37,7 @@ passport.use("local.signup", new LocalStrategy({
                     newUser.email = req.body.email;
                     newUser.confirmPassword = newUser.encryptPassword(req.body.confirmPassword);
                     newUser.role = "user";
+                    newUser.activateExpires = Date.now() * 7 * 24 * 60 * 1000;
                     newUser.save(function (err) {
                         if (err) {
                             console.log(err);
@@ -50,5 +47,32 @@ passport.use("local.signup", new LocalStrategy({
                     });
                 }
             });
+}));
+
+
+passport.serializeUser(function (user, done) {
+    return done(null, user.id);
+});
+passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+        done(err, user);
+    });
+});
+
+passport.use("local.login", new LocalStrategy({
+    usernameField: "email",
+    passwordField: "password",
+    passReqToCallback: true
+}, function (req, email, password, done) {
+    User.findOne({"email": email}, function (err, user) {
+        if (err) {
+            throw err;
         }
+        if (!user || !user.validPassword(password)) {
+            return done(null, false, {message: "error in email or password"});
+        }
+        if (user) {
+            return done(null, user);
+        }
+    });
 }));

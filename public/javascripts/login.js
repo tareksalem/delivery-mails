@@ -1,4 +1,3 @@
-//function to send form requests to ajax
 function validationFor(form, fields) {
     form.addEventListener("submit", function (event) {
         for (var i = 0; i < fields.length; i++) {
@@ -12,4 +11,4 @@ function validationFor(form, fields) {
         }
     });
 }
-validationFor(document.querySelector(".form-sign"), [document.querySelector(".form-sign input[name=username]"), document.querySelector(".form-sign input[name=email]"), document.querySelector(".form-sign input[name=password]"), document.querySelector(".form-sign input[name=confirmPassword]")]);
+validationFor(document.querySelector(".form-sign"), [document.querySelector(".form-sign input[name=email]"), document.querySelector(".form-sign input[name=password]")]);

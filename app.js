@@ -19,9 +19,9 @@ const users = require('./routes/users');
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.engine("hbs", hbs({defaultLayout: "layout", extname: "hbs"}));
-app.set('view engine', 'hbs');
+//app.set('views', path.join(__dirname, 'views'));
+app.engine("hbs", hbs({defaultLayout: "layout", extname: ".hbs"}));
+app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -31,7 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: "max",
     saveUninitialized: true,
-    resave: true
+    resave: true,
+    cookie: {maxAge: 7*24*60*60*1000}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -40,6 +41,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(function (req, res, next) {
   res.locals.message = require("express-messages")(req, res);
+  if (req.isAuthenticated() && req.user.role == "user") {
+      res.locals.userLogged = req.isAuthenticated();
+  }
+  res.locals.isNotLoggedIn = !req.isAuthenticated();
   next();
 });
 app.use('/', index);

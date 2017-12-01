@@ -1,0 +1,14 @@
+body{
+    background-color: #eeeeee;
+}
+.container{
+    margin:80px 0px 100px 0px;
+}
+.welcom-user{
+    text-align:center;
+    color: #249dff;
+}
+#changeInfo{
+    display:block;
+    margin:auto;
+}

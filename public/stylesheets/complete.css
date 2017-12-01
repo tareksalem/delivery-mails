@@ -1,0 +1,76 @@
+
+.container{
+    margin-bottom:250px;
+}
+.container-options{
+    width:50%;
+    margin:auto;
+    margin-top:200px;
+}
+.container-options a{
+    text-decoration:none;
+}
+.container-options h1{
+    color:white;
+    text-align:center;
+}
+
+.container-option-activate{
+    padding:10px;
+    height:100px;
+    background-color: #1d8028;
+}
+.container-option-try-free-tail{
+    padding:10px;
+    height:100px;
+    background-color:#2992ff;
+}
+.activate-user{
+    width:70%;
+    margin:80px auto;
+    background-color: #2992ff;
+    padding:0px 0px 30px 0px;
+    box-shadow: 1px 1px 11px 0px;
+    display: none;
+}
+.activate-user h3{
+    background-color:white;
+    padding:30px;
+    text-align:center;
+    border:1px solid #cecece;
+}
+.alert{
+    color:white;
+    width:80%;
+    text-align: center;
+    font-size:18px;
+    margin:auto;
+    background-color:#ff8379;
+    margin-top:40px;
+}
+.alarm{
+    visibility: hidden;
+
+}
+.activate-user .form-group{
+    width:60%;
+    margin:auto;
+}
+.activate-user label{
+    color:white;
+    font-size:18px;
+    margin-bottom:20px;
+    margin-top:20px;
+    padding:10px;
+}
+.submit-btn{
+    display:block;margin:auto;
+    margin-top:40px;
+    width:200px;
+    color:#03A9F4;
+}
+.submit-btn:hover{
+    background-color:#2992ff;
+    color:white;
+    transition:.4s ease-in-out;
+}

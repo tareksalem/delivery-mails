@@ -3,19 +3,17 @@ body {
   margin: 0px;
   font-family: 'Barlow Semi Condensed', sans-serif;
   height:auto;
+  background-color: #eeeeee;
 }
 /*style for heade and navbar*/
 header{
   box-shadow: 7px -6px 20px 0px;
 }
-.static-header-before-login nav .navbar-nav a{
-  color:black;
-}
 .navbar-brand{font-size:22px;}
 .static-header-before-login nav .navbar-nav a:hover{
   background:none;
 }
-.static-header-before-login nav .nav-links, #about-us-link{
+.static-header-before-login nav .nav-links, #about-us-link, #user-logout{
   color:white !important;
   padding:12px 22px 12px 22px;
   margin:10px;
@@ -39,6 +37,32 @@ header{
 }
 #about-us-link:hover{
   background-color: rgba(3, 21, 13, 0.77);
+}
+#user-logout{
+  background-color: #858585;
+}
+#user-logout:hover{
+  background-color: #444444;
+}
+.btn-right-navbar{color:white;}
+#upgrade-memeber{
+  background-color: #ca0821;
+}
+#upgrade-memeber:hover{
+  background-color: #9a0519;
+  transition:.4s ease-out;
+}
+#edit-setting{
+  background-color: #608cff;
+}
+#edit-setting:hover{
+  background-color: #4463b4;
+}
+#dashboard-btn{
+  background-color: #00b900;
+}
+#dashboard-btn:hover{
+  background-color:green;
 }
 /*end style for heade and navbar*/
 /*start style for main container of pages*/
@@ -68,6 +92,7 @@ footer .voda-icon{
 .copy-rights{
   text-align:right;
 }
+
 /*media query*/
 @media (max-width: 765px) {
   .static-header-before-login nav .navbar-right li{

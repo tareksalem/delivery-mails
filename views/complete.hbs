@@ -1,3 +1,33 @@
-{{#if success}}
-    <div class="alert alert-success">{{success}}</div>
-{{/if}}
+<style>
+    @import url("/stylesheets/complete.css");
+</style>
+<div class="container">
+    {{#if success}}
+        <div class="alert alert-success">{{success}}</div>
+    {{/if}}
+    <div class="row container-options">
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+            <div class="container-option-activate">
+                <a class="user-activate-slide" href="#activate"><h1>activate your acount</h1></a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
+            <div class="container-option-try-free-tail">
+                <a href="/users/dashboard"><h1>try free trail (7 days)</h1></a>
+            </div>
+        </div>
+    </div>
+    <form class="activate-user" action="/users/useractivate" method="post">
+        <div class="alert alarm"></div>
+        <div class="form-group cont-userPhone">
+            <label>please enter your phone number</label>
+            <input type="number" class="form-control" id="userPhone" name="userPhone"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control submit-btn" value="submit"/>
+        </div>
+    </form>
+</div>
+
+
+<script src="/javascripts/complete.js"></script>
