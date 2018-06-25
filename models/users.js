@@ -12,7 +12,7 @@ var userSchema = new Schema({
     passwordResetExpires: {type: String, default: Date.now},
     role: {type: String, required: true},
     activateExpires: {type: String},
-    userPhone: {type: Number, required: true}
+    userPhone: {type: Number, required: false}
 });
 userSchema.methods.encryptPassword = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
